@@ -1,4 +1,4 @@
-import openModal from "../../script/modal.js"
+/*import openModal from "../../script/modal.js"
 
 const btnDelPerfil = document.querySelector(".modal_deletar_perfil")
 const btnDadosPerfil = document.querySelector(".modal_dados_perfil")
@@ -38,5 +38,5 @@ btnAtualizarDados.addEventListener("click", () => {
     <button class="btn_type1">Atualizar</button>`
 
     openModal(conteudo)
-})
+})*/
 

@@ -1,0 +1,35 @@
+.font1-purple{
+    font-size: 1.75rem;
+    font-weight: 700;
+    color: var(--color-purple);
+}
+.font2-purple-bold{
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--color-purple);
+}
+.font3-purple-bold{
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--color-purple);
+}
+.font3-black-bold{
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--color-black);
+}
+.font4-black-regular{
+    font-size: 0.875rem;
+    font-weight: 400;
+    color: var(--color-black);
+}
+.font4-purple-regular{
+    font-size: 0.875rem;
+    font-weight: 400;
+    color: var(--color-purple);
+}
+.font5-purple-regular{
+    font-size: 0.75rem;
+    font-weight: 400;
+    color: var(--color-purple);
+}
