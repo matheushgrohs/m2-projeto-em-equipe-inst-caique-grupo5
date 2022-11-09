@@ -1,4 +1,4 @@
-import { Register } from "../../script/Requisicoes/Users/POST";
+import { Register, Login } from "../../script/Requisicoes/Users/POST.js";
 
 const body = document.querySelector(".modal-place");
 
@@ -9,14 +9,14 @@ export class Btnfunctions {
           <input id="name" type="text" placeholder="Nome">
           <input id="email" type="email" placeholder="E-mail">
           <input id="password" type="password" placeholder="Senha">
-          <input id="avatar" type="text" placeholder="Avatar">
+          <input id="avatar_url" type="text" placeholder="Avatar">
           <button id="register" class="btn_type1">Cadastrar</button>
           <span>Já tem cadastro? <span class="link-login">Clique aqui</span> para logar</span>
         </form>
         `;
     Render.openModal(conteudo);
 
-    document;
+   
 
     const formulario = document.querySelector("form");
     const elements = [...formulario.elements];
@@ -32,8 +32,8 @@ export class Btnfunctions {
         Register(body);
       })
 
-      .querySelector(".link-login")
-      .addEventListener("click", function () {
+     const btn =  document.querySelector(".link-login")
+      btn.addEventListener("click", function () {
         Render.cleanModal(body);
         Btnfunctions.login();
       });
@@ -50,11 +50,10 @@ export class Btnfunctions {
 
     Render.openModal(conteudo);
 
-    document
+    
     const formulario = document.querySelector("form");
     const elements = [...formulario.elements];
-    formulario
-      .addEventListener("submit", (e) => {
+    formulario.addEventListener("submit", (e) => {
         e.preventDefault();
         const body = {};
         elements.forEach((elemento) => {
@@ -62,9 +61,9 @@ export class Btnfunctions {
             body[elemento.id] = elemento.value;
           }
         });
-        Register(body);
+        Login(body);
       })
-      .querySelector(".link-register")
+      document.querySelector(".link-register")
       .addEventListener("click", function () {
         Render.cleanModal(body);
         Btnfunctions.register();

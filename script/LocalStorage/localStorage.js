@@ -1,4 +1,4 @@
 export function getLocal (){
-    const token = JSON.parse(localStorage.getItem("User"))
+    const token = JSON.parse(localStorage.getItem("token"))
     return token
 }
