@@ -1,9 +1,10 @@
 const baseUrl = 'https://m2-api-adot-pet.herokuapp.com'
 const token = localStorage.getItem('token')
+
 const headers = {
     "Content-Type": "application/json",
-    Authorization: `Bearer ${token}`
-}
+    Authorization: `Bearer ${token}`,
+  };
 
 export async function getPets () {
     const pets = await fetch (`${baseUrl}/pets`, {
