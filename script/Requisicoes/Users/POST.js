@@ -2,7 +2,7 @@ const baseUrl = "https://m2-api-adot-pet.herokuapp.com/";
 
 export async function Register(body) {
   try {
-    const request = await fetch(`${baseUrl}user`, {
+    const request = await fetch(`${baseUrl}users`, {
       method: "POST",
       headers: {
         "Content-type": "Application/json",
@@ -11,10 +11,10 @@ export async function Register(body) {
     });
     if (request.ok) {
       const response = request.json();
-      setTimeout(() => {
-        const bgModal = document.querySelector("bg_modal");
-        bgModal.remove(bgModal);
-      }, 3000);
+      // setTimeout(() => {
+      //   const bgModal = document.querySelector("bg_modal");
+      //   bgModal.remove(bgModal);
+      // }, 3000);
       return response;
     }
   } catch (error) {
@@ -33,7 +33,8 @@ export async function Login(body) {
     });
     if (request.ok) {
       const response = await request.json();
-      localStorage.setItem("User", JSON.stringify(response));
+      localStorage.setItem("token", JSON.stringify(response));
+      window.location.assign('/pages/home/homePage-logged.html')
       return response;
     }
   } catch (error) {
