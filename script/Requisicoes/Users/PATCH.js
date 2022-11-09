@@ -1,4 +1,4 @@
-import { getLocal } from "./localStorage.js";
+import { getLocal } from "../../LocalStorage/localStorage.js";
 
 const baseUrl = "https://m2-api-adot-pet.herokuapp.com/";
 const token = getLocal();
