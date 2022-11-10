@@ -1,23 +1,48 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../../styles/globalStyles.css">
-    <link rel="stylesheet" href="../../styles/inputs.css">
-    <link rel="stylesheet" href="../../styles/buttons.css">
-    <link rel="stylesheet" href="../../styles/modal.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../../styles/globalStyles.css" />
+    <link rel="stylesheet" href="../../styles/inputs.css" />
+    <link rel="stylesheet" href="../../styles/buttons.css" />
+    <link rel="stylesheet" href="../../styles/fonts.css" />
+    <link rel="stylesheet" href="profile.css" />
+    <link rel="stylesheet" href="/styles/modal.css" />
     <script type="module" defer src="../../script/modal.js"></script>
     <script type="module" defer src="../profile/profile.js"></script>
     <title>Kenzie</title>
-</head>
-<body>
+  </head>
+  <body>
+    <header>
+      <div id="header-container">
+        <h1 class="font1-purple">KenziePets</h1>
+        <div>
+          <button id="home" class="btn_type3_light">Home</button>
+          <button id="logout" class="btn_type1_light">Logout</button>
+        </div>
+      </div>
+    </header>
     <main>
-        <button class="modal_deletar_perfil">Deletar perfil</button>
-        <button class="modal_dados_perfil">Dados perfil</button>
-        <button class="modal_cadastro_pet">Cadastro Pet</button>
-        <button class="modal_atualizar_pet">Atualizar Pet</button>
+      <div id="user-container">
+        <div id="img-user-container">
+          
+        </div>
+        
+            
+      </div>
+      <div id="primary-container-pet">
+        <button  class="modal_cadastro_pet btn_type4_light" >Cadastrar novo pet</button>
+        <ul id="pet-container">
+          
+        </ul>
+      </div>
     </main>
-</body>
+    <footer>
+      <h3 class="font5-purple-regular">
+        KenziePets | Todos os Direitos Reservados
+      </h3>
+    </footer>
+  </body>
 </html>

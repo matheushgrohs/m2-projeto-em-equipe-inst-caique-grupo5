@@ -1,42 +1,74 @@
-import openModal from "../../script/modal.js"
+import { ReadProfile } from "../../script/Requisicoes/Users/GET.js";
+import { userPets, userPetsRender, userProfile } from "../../script/render/UserProfile.js";
+import openModal from "../../script/modal.js";
 
-const btnDelPerfil = document.querySelector(".modal_deletar_perfil")
-const btnDadosPerfil = document.querySelector(".modal_dados_perfil")
-const btnCadastroPet = document.querySelector(".modal_cadastro_pet")
-const btnAtualizarDados = document.querySelector(".modal_atualizar_pet")
 
-btnDelPerfil.addEventListener("click", () => {
-    const conteudo = `<h2>Deseja mesmo deletar sua conta?</h2>
-    <button class="btn_type1">Não quero deletar minha conta</button>
-    <button class="btn_type2">Quero deletar minha conta</button>`
 
-    openModal(conteudo)
+const especies = ["Cachorro", "Gato", "Aves", "Repteis", "Outros"];
+const user = await ReadProfile();
+const pets = await ReadProfile()
+const btnHome = document.querySelector('#home')
+const btnLogout = document.querySelector('#logout')
+const token = localStorage.getItem('token')
+
+btnHome.addEventListener('click', (e)=>{
+  e.preventDefault()
+  window.location.href='../home/homePage-logged.html'
 })
-
-btnDadosPerfil.addEventListener("click", () => {
-    const conteudo = `<h2>Atualizar perfil</h2>
-    <input type="text" placeholder="Nome">
-    <input type="email" placeholder="E-mail">
-    <input type="text" placeholder="Avatar">
-    <button class="btn_type1">Atualizar</button>
-    `
-
-    openModal(conteudo)
+btnLogout.addEventListener('click', () => {
+  localStorage.removeItem('token')
+  window.location.assign('/pages/home/homePage-noLogin.html')
 })
+if (!token) {
+  window.location.assign('/pages/home/homePage-noLogin.html')
+}
+
+
+const btnCadastroPet = document.querySelector('.modal_cadastro_pet')
 btnCadastroPet.addEventListener("click", () => {
-    const conteudo = `<h2>Cadastrar pet</h2>
-    <input type="text" placeholder="Nome">
-    <input type="email" placeholder="Raça">
-    <input type="text" placeholder="Avatar">
-    <button class="btn_type1">Cadastrar</button>`
+  const conteudo = `<h2>Cadastrar pet</h2>
+    <form>
+        <input id="name" type="text" placeholder="Nome">
+        <input id="bread" type="text" placeholder="Raça">
+        <select id="species" name = "species" type="text"></select>
+        <input id="avatar_url" type="text" placeholder="Avatar">
+        <button class="btn_type1">Cadastrar</button>
+    </form>`;
 
-    openModal(conteudo)
-})
-btnAtualizarDados.addEventListener("click", () => {
-    const conteudo = `<h2>Atualizar pet</h2>
-    <input type="text" placeholder="Avatar">
-    <button class="btn_type1">Atualizar</button>`
+  openModal(conteudo);
 
-    openModal(conteudo)
-})
+  const formulario = document.querySelector("form");
+  const select = document.querySelector("select");
+  const firstOption = document.createElement("option");
+  firstOption.innerText = "Especies";
+  select.append(firstOption);
+
+  especies.forEach((elements) => {
+    const option = document.createElement("option");
+    option.innerText = elements;
+    option.value = elements;
+    select.append(option);
+  });
+  const elements = [...formulario.elements];
+
+  formulario.addEventListener("submit", (e) => {
+    e.preventDefault();
+    const body = {};
+    elements.forEach((element) => {
+      if (element.tagName == "INPUT" || element.tagName == "SELECT") {
+        body[element.id] = element.value;
+        console.log(body);
+      }
+    });
+    //chamar funcão que for renderizar
+    CreatePet(body);
+  });
+});
+
+
+const readProfile = await ReadProfile()
+console.log(readProfile)
+
+userProfile(readProfile)
+userPets(readProfile)
 

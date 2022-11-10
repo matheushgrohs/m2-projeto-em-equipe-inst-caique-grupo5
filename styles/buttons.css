@@ -1,3 +1,14 @@
+button{
+    cursor: pointer;
+}
+
+
+
+
+
+
+
+
 .btn_close {
     cursor: pointer;
     position: absolute;
@@ -22,6 +33,17 @@
     height: 27px;
     width: 240px;
 }
+.btn_type1_light {
+    cursor: pointer;
+    background-color: var(--color-purple);
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--color-white);
+    border-radius: 16px;
+    padding: 4px 16px;
+    border: none;
+    width: fit-content;
+}
 
 .btn_type2 {
     cursor: pointer;
@@ -33,5 +55,38 @@
     padding: 4px 16px;
     border: 1px solid var(--color-red);
     height: 27px;
+}
+.btn_type2_light {
+    cursor: pointer;
+    background-color: var(--color-white);
+    font-size: 14px;
+    color: var(--color-red);
+    border-radius: 16px;
+    width: fit-content;
+    padding: 4px 16px;
+    border: 1px solid var(--color-red);
+    
+}
+.btn_type3_light {
+    cursor: pointer;
+    background-color: var(--color-white);
+    font-size: 14px;
+    color: var(--color-purple);
+    border-radius: 16px;
+    width: fit-content;
+    padding: 4px 16px;
+    border: 1px solid var(--color-purple);
+    
+}
+.btn_type4_light {
+    cursor: pointer;
+    background-color: var(--color-green);
+    font-size: 14px;
+    color: var(--color-white);
+    border-radius: 16px;
+    width: fit-content;
+    padding: 4px 16px;
+    border: 1px solid var(--color-green);
+    
 }
 
