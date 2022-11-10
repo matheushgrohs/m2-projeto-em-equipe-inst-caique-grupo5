@@ -3,7 +3,7 @@ import { adoptions } from "../../script/Requisicoes/Adoptions/POST.js"
 
 const pets = await getPets()
 
-function redirect () {
+export function redirect () {
     const profileBtn = document.querySelector('.profileBtn')
     const logoutBtn = document.querySelector('.logoutBtn')
     const token = localStorage.getItem('token')

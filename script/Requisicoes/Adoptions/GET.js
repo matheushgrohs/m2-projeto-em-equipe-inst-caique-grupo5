@@ -13,6 +13,7 @@ export async function ReadAllAdoptions() {
       },
     });
     const response = await request.json();
+    console.log(response)
     return response;
   } catch (error) {
     console.log(error);
@@ -34,3 +35,4 @@ export async function ReadAdoptionById(idAdotion) {
     console.log(error);
   }
 }
+ReadAllAdoptions()

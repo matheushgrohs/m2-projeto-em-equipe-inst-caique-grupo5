@@ -17,6 +17,7 @@ export async function UpdatePetById(body,idPet) {
     });
     if (request.ok) {
       const response = request.json();
+      window.location.reload() 
       return response;
     }
   } catch (error) {
