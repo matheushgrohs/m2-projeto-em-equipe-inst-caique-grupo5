@@ -3,10 +3,25 @@ import { userPets, userPetsRender, userProfile } from "../../script/render/UserP
 import openModal from "../../script/modal.js";
 
 
+
 const especies = ["Cachorro", "Gato", "Aves", "Repteis", "Outros"];
 const user = await ReadProfile();
 const pets = await ReadProfile()
- console.log(pets.id)
+const btnHome = document.querySelector('#home')
+const btnLogout = document.querySelector('#logout')
+const token = localStorage.getItem('token')
+
+btnHome.addEventListener('click', (e)=>{
+  e.preventDefault()
+  window.location.href='../home/homePage-logged.html'
+})
+btnLogout.addEventListener('click', () => {
+  localStorage.removeItem('token')
+  window.location.assign('/pages/home/homePage-noLogin.html')
+})
+if (!token) {
+  window.location.assign('/pages/home/homePage-noLogin.html')
+}
 
 
 const btnCadastroPet = document.querySelector('.modal_cadastro_pet')

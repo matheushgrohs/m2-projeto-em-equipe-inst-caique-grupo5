@@ -71,6 +71,7 @@ export async function userProfile(obj){
                 }
               });
               UpdateProfile(data);
+              
             });
           });
 
