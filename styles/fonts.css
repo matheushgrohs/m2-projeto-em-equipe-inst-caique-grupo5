@@ -18,10 +18,26 @@
     font-weight: 600;
     color: var(--color-black);
 }
+.font3-black-bold-reverse{
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--color-black);
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: flex-end;
+}
 .font4-black-regular{
     font-size: 0.875rem;
     font-weight: 400;
     color: var(--color-black);
+}
+.font4-black-regular-reverse{
+    font-size: 0.875rem;
+    font-weight: 400;
+    color: var(--color-black);
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: flex-end;
 }
 .font4-purple-regular{
     font-size: 0.875rem;

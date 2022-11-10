@@ -1,3 +1,4 @@
+import { openModalAdopt } from "../../../pages/home/homePage-logged.js";
 import { getLocal } from "./localStorage.js";
 
 const headers = {
@@ -15,8 +16,9 @@ export async function updateAdoptionById(body, id) {
       headers: headers,
       body: JSON.stringify(body),
     });
-    if (request.ok) {
+    if (request.ok==true) {
       const response = await request.json();
+      openModalAdopt()
       return response;
     }
   } catch (error) {
