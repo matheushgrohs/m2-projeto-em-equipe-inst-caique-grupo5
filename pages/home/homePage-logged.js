@@ -58,5 +58,31 @@ function showPetCard (array) {
     });
 }
 
+export function openModalAdopt () {
+    const body = document.querySelector('body')
+    const modalBackground = document.createElement('div')
+    const modalContent = document.createElement('div')
+    const closeModal = document.createElement('img')
+    const h3 = document.createElement('h3')
+
+    modalBackground.classList.add('bg_modal')
+    modalContent.classList.add('modal_adopt')
+    closeModal.classList.add('close')
+
+    closeModal.src = '/assets/closeMenu.png'
+    h3.innerText = 'Pet adotado!'
+
+    modalBackground.addEventListener("click", (event) => {
+        const {className} = event.target
+        if(className === "modal" || className === 'close'){
+            modalBackground.remove()
+        }
+    })
+
+    body.appendChild(modalBackground)
+    modalBackground.appendChild(modalContent)
+    modalContent.append(closeModal, h3)
+}
+
 showPetCard (pets)
 redirect ()

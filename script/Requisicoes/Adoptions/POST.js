@@ -1,3 +1,4 @@
+import { openModalAdopt } from "../../../pages/home/homePage-logged.js";
 import { getLocal } from "../../LocalStorage/localStorage.js";
 
 const baseUrl = "https://m2-api-adot-pet.herokuapp.com/";
@@ -17,6 +18,7 @@ export async function adoptions(body) {
     });
     if (request.ok) {
       const response = request.json();
+      openModalAdopt()
       return response;
     }
   } catch (error) {
