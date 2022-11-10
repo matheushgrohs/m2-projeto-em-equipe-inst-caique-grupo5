@@ -15,3 +15,4 @@ export async function getPets () {
     .catch(err => console.log(err))
     return pets
 }
+

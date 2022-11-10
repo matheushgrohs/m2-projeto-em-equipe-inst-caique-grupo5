@@ -1,4 +1,5 @@
 import { getPets } from "../../script/homePage-logged-requests.js"
+import { adoptions } from "../../script/Requisicoes/Adoptions/POST.js"
 
 const pets = await getPets()
 
@@ -28,9 +29,22 @@ function createPetCard (obj) {
     imgCard.src = obj.avatar_url
     titleCard.innerText = obj.name
     pet.innerText = obj.species
-    adoptBtn.innerText = 'Me adota?'
+    if (obj.available_for_adoption == true) {
+        adoptBtn.classList.add('available')
+        adoptBtn.innerText = 'Me adota?'
+    } else if (obj.available_for_adoption == false) {
+        adoptBtn.classList.add('notAvailable') 
+        adoptBtn.innerText = 'Adotado'
+    }
 
     card.append(imgCard,titleCard,pet,adoptBtn)
+
+    adoptBtn.addEventListener('click', async () => {
+        const body = {
+            pet_id: obj.id
+        }
+        await adoptions(body)
+    })
 
     return card
 }
