@@ -104,10 +104,22 @@ li > p {
     color: #90A4AE;
     margin-left: 16px;
 }
-li > button {
+.available {
     width: 103px;
     height: 27px;
     background: #33CC66;
+    border-radius: 16px;
+    color: white;
+    font-weight: 600;
+    font-size: 14px;
+    margin-left: 50px;
+    margin-top: 16px;
+    cursor: pointer;
+}
+.notAvailable {
+    width: 103px;
+    height: 27px;
+    background: #EA534A;
     border-radius: 16px;
     color: white;
     font-weight: 600;

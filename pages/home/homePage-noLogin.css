@@ -48,6 +48,7 @@ h1 {
     font-weight: 600;
     font-size: 16px;
     border-radius: 16px;
+    cursor: pointer;
 }
 .loginBtn {
     width: 90px;
@@ -57,6 +58,7 @@ h1 {
     background-color: #4E2096;
     color: white;
     border-radius: 16px;
+    cursor: pointer;
 }
 
 main {
